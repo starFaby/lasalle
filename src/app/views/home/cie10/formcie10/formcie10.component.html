@@ -1,0 +1,22 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="controleContainer">
+        <input type="hidden" formControlName="$key">
+        <mat-form-field>
+            <input type="text" formControlName="codigo" matInput placeholder="Codigo">
+            <mat-error>El campo nombre es obligatorio</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input type="text" formControlName="descripcion" matInput placeholder="Descripcion">
+            <mat-error>El campo descripcion es obligatorio</mat-error>
+        </mat-form-field>
+        <mat-radio-group formControlName="estado">
+            <mat-radio-button value="1">Activo</mat-radio-button>
+            <mat-radio-button value="2">Inactivo</mat-radio-button>
+        </mat-radio-group>
+        <div class="row">
+            <button mat-fab color="primary" type="submit" [disabled]="form.invalid">Submit</button>
+            <button mat-fab color="warn" (click)="onReset()">Clear</button>
+            <button  mat-fab color="accent" (click)="onClose()">Close</button>
+        </div>
+    </div>
+</form>

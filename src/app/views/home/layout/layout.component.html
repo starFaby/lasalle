@@ -1,0 +1,85 @@
+<mat-sidenav-container>
+  <mat-sidenav mode="side" [(opened)]="opened">
+    <mat-accordion>
+      <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Formulario
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-list role="list">
+          <mat-list-item [routerLink]="['formularioForm']">Lista general</mat-list-item>
+        </mat-list>
+      </mat-expansion-panel>
+      <!---->
+      <!---->
+      <!---->
+      <br>
+      <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Estudiante
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-list role="list">
+          <mat-list-item [routerLink]="['estudianteList']">Lista Estudiante</mat-list-item>
+        </mat-list>
+      </mat-expansion-panel>
+      <!---->
+      <!---->
+      <!---->
+      <br>
+      <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Cie 10
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-list role="list">
+          <mat-list-item [routerLink]="['cie10List']">Lista Cie 10</mat-list-item>
+        </mat-list>
+      </mat-expansion-panel>
+      <!---->
+      <!---->
+      <!---->
+      <br>
+      <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            PDF
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-list role="list">
+          <mat-list-item [routerLink]="['datePdf']">Lista Cie 10</mat-list-item>
+        </mat-list>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </mat-sidenav>
+  <!---->
+  <!---->
+  <!---->
+  <br>
+  <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        PDF
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-list role="list">
+      <mat-list-item [routerLink]="['datePdf']">Lista Cie 10</mat-list-item>
+    </mat-list>
+  </mat-expansion-panel>
+  <!---->
+  <!---->
+  <!---->
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button mat-icon-button (click)="opened =! opened">
+        <mat-icon>Menu</mat-icon>
+      </button>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+      
+   </mat-sidenav-content>
+</mat-sidenav-container>
+<!--side push over ==> sirven para dar formas al sidebar-->

@@ -1,0 +1,55 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <mat-grid-list cols="2" rowHeight="300px">
+        <mat-grid-tile>
+            <div class="controleContainer">
+                <mat-form-field [hidden]="true">
+                    <input type="text" formControlName="$key" matInput placeholder="$key">
+                    <mat-error>El campo $key es obligatorio</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <input type="text" formControlName="cedula" matInput placeholder="cedula">
+                    <mat-error>El campo nombre es obligatorio</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <input type="text" formControlName="nombre" matInput placeholder="nombre">
+                    <mat-error>El campo nombre es obligatorio</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <input type="text" formControlName="apellido" matInput placeholder="apellido">
+                    <mat-error>El campo nombre es obligatorio</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <input type="text" formControlName="direccion" matInput placeholder="direccion">
+                    <mat-error>El campo nombre es obligatorio</mat-error>
+                </mat-form-field>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <div class="controleContainer">
+                <mat-radio-group formControlName="genero">
+                    <mat-radio-button value="M">Masculino</mat-radio-button>
+                    <mat-radio-button value="F">Femenino</mat-radio-button>
+                </mat-radio-group>
+                <mat-form-field>
+                    <input type="text" formControlName="fechaN" matInput [matDatepicker]="picker"    placeholder="fechaN">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker  ></mat-datepicker>
+                    <mat-error>El campo nombre es obligatorio</mat-error>
+                </mat-form-field>
+                <mat-label><h2>Estado</h2></mat-label>
+                <br>
+                <mat-radio-group formControlName="estado">
+                    <mat-radio-button value="1">Activo</mat-radio-button>
+                    <mat-radio-button value="0">Inactivo</mat-radio-button>
+                </mat-radio-group>
+                <div class="row ">
+                    <button  mat-fab color="primary" type="submit" [disabled]="form.invalid">Submit</button>
+                    <button  mat-fab color="warn" (click)="onReset()">Clear</button>
+                    <button  mat-fab color="accent" (click)="onClose()">Close</button>
+                    <button  mat-fab color="primary" (click)="onResetFecha()">reset F</button>
+                </div>
+            </div>
+        </mat-grid-tile>
+    </mat-grid-list>
+
+</form>

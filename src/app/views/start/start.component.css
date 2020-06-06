@@ -1,0 +1,11 @@
+.floating-btn {
+    position: fixed;
+    /* Footer height */
+    bottom: 65px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 1000;
+}
+.butonStart{
+    width: 10%;
+}

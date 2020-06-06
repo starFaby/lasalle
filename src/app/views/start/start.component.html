@@ -1,0 +1,26 @@
+<div class="btn-floating"><button class="butonStart" mat-fab [routerLink]="['/home']">Get Started</button></div>
+<img src="../../../assets/images/laSalle.png" class="img-fluid" alt="">
+
+
+<h4>Basic mat-select</h4>
+<mat-form-field>
+  <mat-label>Favorite food</mat-label>
+  <mat-select>
+    <mat-option *ngFor="let item of array" [value]="item.id">
+      {{item.numeroFactura}}
+      <div class="row">
+        <div class="col-md-12">
+          <div class="row p-4">
+            <div class="col-md-6 p-4">
+              <input type="text" value="{{item.valor}}">
+            </div>
+            <div class="col-md-6 p-4">
+              <input type="text" value="{{item.estado}}">
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+<div>
